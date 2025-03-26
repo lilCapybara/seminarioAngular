@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Maqueta } from './maqueta';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-maquetas-list',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './maquetas-list.component.html',
   styleUrl: './maquetas-list.component.scss'
 })
@@ -61,10 +63,12 @@ export class MaquetasListComponent {
   ngOnInit():void{}
 
   upQuantity(maqueta:Maqueta) : void{
-    maqueta.quantity++;
+    if(maqueta.quantity<maqueta.stock)
+      maqueta.quantity++;
   }
 
   downQuantity(maqueta:Maqueta) : void{
+    if(maqueta.quantity>0)
       maqueta.quantity--;
   }
 }

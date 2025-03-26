@@ -20,7 +20,7 @@
             <td *ngIf="maqueta.stock!=0">{{maqueta.stock}}</td>
             <td>
                 <button class="btn btn-outline-danger" (click)="downQuantity(maqueta)">-</button>
-                 {{maqueta.quantity}} 
+                <input type="text" [(ngModel)]="maqueta.quantity">
                 <button class="btn btn-outline-success" (click)="upQuantity(maqueta)">+</button>
             </td>
         </tr>
