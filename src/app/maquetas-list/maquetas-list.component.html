@@ -1,0 +1,28 @@
+<h1>Listado de maquetas</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Compras</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let maqueta of maquetas" [ngClass]="{'clearance' : maqueta.clearance}">
+            <td><img style="width:250px; height:200px;" [src]="maqueta.image" [alt]="maqueta.name"/></td>
+            <td>{{maqueta.name}}</td>
+            <td>{{maqueta.type}}</td>
+            <td>{{maqueta.price | currency}}</td>
+            <td *ngIf="maqueta.stock==0"><span class="badge text-bg-warning">Sin stock</span></td>
+            <td *ngIf="maqueta.stock!=0">{{maqueta.stock}}</td>
+            <td>
+                <button class="btn btn-outline-danger" (click)="downQuantity(maqueta)">-</button>
+                 {{maqueta.quantity}} 
+                <button class="btn btn-outline-success" (click)="upQuantity(maqueta)">+</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
