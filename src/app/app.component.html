@@ -6,25 +6,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
+          <a class="nav-link" [routerLink]="['/about']">Acerca de</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Acerca de</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+
       </ul>
     </div>
   </div>
 </nav>
 
 <div class="container">
-  <app-maquetas-compra></app-maquetas-compra>
+  <router-outlet></router-outlet>
 </div>
 <footer class="text-center bg-dark fixed-bottom"><span class="text-light">
   {{title}}© 2025. Reservados todos los derechos.</span>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { MaquetasListComponent } from "./maquetas-list/maquetas-list.component";
 import { FormsModule } from '@angular/forms';
 import { MaquetasCartComponent } from "./maquetas-cart/maquetas-cart.component";
@@ -8,7 +8,7 @@ import { MaquetasCompraComponent } from "./maquetas-compra/maquetas-compra.compo
 
 @Component({
   selector: 'app-root',
-  imports: [MaquetasListComponent, FormsModule, MaquetasCartComponent, MaquetasAboutComponent, MaquetasCompraComponent],
+  imports: [RouterLink,RouterOutlet,MaquetasListComponent, FormsModule, MaquetasCartComponent, MaquetasAboutComponent, MaquetasCompraComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
