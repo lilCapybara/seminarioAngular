@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { MaquetasCartComponent } from "./maquetas-cart/maquetas-cart.component";
 import { MaquetasAboutComponent } from "./maquetas-about/maquetas-about.component";
 import { MaquetasCompraComponent } from "./maquetas-compra/maquetas-compra.component";
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterLink,RouterOutlet,MaquetasListComponent, FormsModule, MaquetasCartComponent, MaquetasAboutComponent, MaquetasCompraComponent],
+  imports: [InputIntegerComponent,RouterLink,RouterOutlet,MaquetasListComponent, FormsModule, MaquetasCartComponent, MaquetasAboutComponent, MaquetasCompraComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

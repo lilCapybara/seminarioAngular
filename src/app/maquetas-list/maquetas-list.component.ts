@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
-import { Maqueta } from './maqueta';
+import { Maqueta } from './Maqueta';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { InputIntegerComponent } from "../input-integer/input-integer.component";
 
 
 @Component({
   selector: 'app-maquetas-list',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, InputIntegerComponent],
   templateUrl: './maquetas-list.component.html',
   styleUrl: './maquetas-list.component.scss'
 })
 
 
 export class MaquetasListComponent {
+
+  constructor(){}
+
+  ngOnInit():void{}
 
   maquetas: Maqueta[] = 
   [
@@ -56,19 +61,5 @@ export class MaquetasListComponent {
       quantity : 0,
     },
   ];
-
-
-  constructor(){}
-
-  ngOnInit():void{}
-
-  upQuantity(maqueta:Maqueta) : void{
-    if(maqueta.quantity<maqueta.stock)
-      maqueta.quantity++;
-  }
-
-  downQuantity(maqueta:Maqueta) : void{
-    if(maqueta.quantity>0)
-      maqueta.quantity--;
-  }
+  
 }
