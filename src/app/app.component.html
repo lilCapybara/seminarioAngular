@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{title}}</a>
+    <a class="navbar-brand" href="#"><img src="assets/img/KC logo.png" alt="KC logo"  width="50%" height="50%"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,11 +24,8 @@
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-      <app-maquetas-list></app-maquetas-list>
-    </div>
-    <div class="col-4">Carrito de compras</div>
-  </div>
+  <app-maquetas-compra></app-maquetas-compra>
 </div>
-<footer>{{title}}© 2025. Reservados todos los derechos.</footer>
+<footer class="text-center bg-dark fixed-bottom"><span class="text-light">
+  {{title}}© 2025. Reservados todos los derechos.</span>
+</footer>
