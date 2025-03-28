@@ -18,7 +18,7 @@
             <td>{{maqueta.price | currency}}</td>
             <td *ngIf="maqueta.stock==0"><span class="badge text-bg-warning">Sin stock</span></td>
             <td *ngIf="maqueta.stock!=0">{{maqueta.stock}}</td>
-            <app-input-integer [maqueta]="maqueta" *ngIf="maqueta.stock"></app-input-integer>
+            <app-input-integer [quantity]="maqueta.quantity" [max]="maqueta.stock" *ngIf="maqueta.stock"></app-input-integer>
         </tr>
     </tbody>
 </table>

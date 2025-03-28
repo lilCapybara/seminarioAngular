@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Maqueta } from '../maquetas-list/Maqueta';
 import { FormsModule } from '@angular/forms';
+import { EventEmitter } from 'node:stream';
 
 @Component({
   selector: 'app-input-integer',
@@ -12,19 +13,27 @@ export class InputIntegerComponent implements OnInit {
 
   constructor(){}
 
-  @Input() maqueta: Maqueta = { name: '', type: '', price: 0, stock: 0, image: '', clearance: true, quantity: 0 }; 
+  @Input() quantity : number; //EL input hace que funcionen los corchetes
+
+  @Input() max : number;
+
+  @Output() quantityChange : EventEmitter <number> = new EventEmitter <number>(); //EL output hace que funcionen los partentesis
 
 
   ngOnInit():void{}
 
-  upQuantity(maqueta:Maqueta) : void{
-    if(maqueta.quantity<maqueta.stock)
-      maqueta.quantity++;
+  upQuantity() : void{
+    if(this.quantity<this.max){
+      this.quantity++;
+      this.quantityChange.emit(this.quantity);
+    }
   }
 
-  downQuantity(maqueta:Maqueta) : void{
-    if(maqueta.quantity>0)
-      maqueta.quantity--;
+  downQuantity() : void{
+    if(this.quantity>0){
+      this.quantity--;
+      this.quantityChange.emit(this.quantity);
+    }
   }
 
 }
